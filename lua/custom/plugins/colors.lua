@@ -1,15 +1,4 @@
 return {
-  {
-    'ilof2/posterpole.nvim',
-    priority = 1000,
-    config = function()
-      require('posterpole').setup {
-        colorless_bg = true,
-        brightnes = -200,
-      }
-      -- vim.cmd 'colorscheme posterpole'
-    end,
-  },
 
   {
     'catppuccin/nvim',
@@ -126,6 +115,7 @@ return {
     lazy = false,
     config = function()
       -- vim.cmd 'colorscheme lackluster-dark'
+      -- vim.cmd 'colorscheme lackluster'
     end,
   },
 

@@ -33,7 +33,7 @@ return {
   {
     'tadmccorkle/markdown.nvim',
     ft = 'markdown', -- or 'event = "VeryLazy"'
-    enabled = false,
+    enabled = true,
     opts = {},
     config = function()
       require('markdown').setup {

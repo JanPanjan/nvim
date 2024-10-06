@@ -4,6 +4,21 @@
 -- See the kickstart.nvim README for more information
 return {
   -- { 'metakirby5/codi.vim' },
+  {
+    'arminveres/md-pdf.nvim',
+    branch = 'main',
+    lazy = true,
+    keys = {
+      {
+        '<leader>,',
+        function()
+          require('md-pdf').convert_md_to_pdf()
+        end,
+        desc = 'Markdown preview',
+      },
+    },
+    opts = {},
+  },
 
   {
     'jbyuki/nabla.nvim',
