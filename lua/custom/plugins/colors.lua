@@ -3,7 +3,6 @@ return {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    lazy = true,
     config = function()
       -- vim.cmd 'colorscheme catppuccin-mocha'
       -- vim.cmd 'colorscheme catppuccin-frappe'
@@ -12,7 +11,6 @@ return {
 
   {
     'kdheepak/monochrome.nvim',
-    lazy = true,
     config = function()
       -- vim.cmd 'colorscheme monochrome'
     end,
@@ -20,7 +18,6 @@ return {
 
   {
     'yorumicolors/yorumi.nvim',
-    lazy = true,
     config = function()
       -- vim.cmd 'colorscheme yorumi'
     end,
@@ -28,7 +25,6 @@ return {
 
   {
     'eldritch-theme/eldritch.nvim',
-    lazy = true,
     priority = 1000,
     opts = {},
     config = function()
@@ -38,7 +34,6 @@ return {
 
   {
     'ferdinandrau/lavish.nvim',
-    lazy = true,
     priority = 1000,
     config = function()
       -- require('lavish').apply 'light'
@@ -52,7 +47,6 @@ return {
 
   {
     'navarasu/onedark.nvim',
-    lazy = true,
     config = function()
       require('onedark').setup {
 	style = 'darker', -- dark, darker, cool, deep, warm, warmer
@@ -62,7 +56,6 @@ return {
 
   {
     'mstcl/ivory',
-    lazy = true,
     config = function()
       -- vim.cmd 'colorscheme ivory'
     end,
@@ -70,7 +63,6 @@ return {
 
   {
     'ribru17/bamboo.nvim',
-    lazy = true,
     config = function()
       require('bamboo').setup {
 	style = 'vulgaris', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
@@ -82,13 +74,11 @@ return {
 
   {
     'ptdewey/darkearth-nvim',
-    lazy = true,
     config = function() end,
   },
 
   {
     'sainnhe/gruvbox-material',
-    lazy = true,
     opts = {
       contrast = 'soft',
     },
@@ -102,7 +92,6 @@ return {
 
   {
     'sho-87/kanagawa-paper.nvim',
-    lazy = true,
     priority = 1000,
     opts = {},
     config = function()
@@ -112,7 +101,6 @@ return {
 
   {
     'rebelot/kanagawa.nvim',
-    lazy = false,
     config = function()
       -- vim.cmd 'colorscheme kanagawa'
       vim.cmd 'colorscheme kanagawa-dragon'
@@ -121,7 +109,6 @@ return {
 
   {
     'slugbyte/lackluster.nvim',
-    lazy = true,
     config = function()
       -- vim.cmd 'colorscheme lackluster-dark'
       -- vim.cmd 'colorscheme lackluster'
@@ -130,13 +117,11 @@ return {
 
   {
     'e-q/okcolors.nvim',
-    lazy = true,
     config = function() end,
   },
 
   {
     'zenbones-theme/zenbones.nvim',
-    lazy = true,
     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
     -- In Vim, compat mode is turned on as Lush only works in Neovim.
