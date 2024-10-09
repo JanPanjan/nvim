@@ -5,11 +5,12 @@ map('i', '<C-c>', '<Esc>')
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 map('n', '<leader>pl', '<cmd>Explore<CR>')
 
--- Markdown preview
+-- Markdown
 map('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<CR>')
+map('n', '<C-e>', '<cmd>Markview<CR>')
 
 -- Indent blankline
-map('n', '<leader>ibl', '<cmd>IBLToggle<CR>')
+-- map('n', '<leader>ibl', '<cmd>IBLToggle<CR>')
 
 -- Telescope colorscheme
 map('n', '<leader>cs', '<cmd>Telescope colorscheme<CR>')

@@ -5,9 +5,10 @@
 return {
   -- { 'metakirby5/codi.vim' },
   {
+    enabled = false,
+    lazy = true,
     'arminveres/md-pdf.nvim',
     branch = 'main',
-    lazy = true,
     keys = {
       {
         '<leader>,',
@@ -21,18 +22,14 @@ return {
   },
 
   {
+    enabled = true,
+    lazy = true,
     'jbyuki/nabla.nvim',
   },
 
   {
-    'echasnovski/mini.nvim',
-    config = function()
-      require('mini.surround').setup()
-      require('mini.pairs').setup()
-    end,
-  },
-
-  {
+    enabled = false,
+    lazy = true,
     'folke/zen-mode.nvim',
     opts = {
       -- your configuration comes here

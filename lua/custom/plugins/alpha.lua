@@ -1,5 +1,7 @@
 return {
   {
+    enabled = false,
+    lazy = true,
     'goolord/alpha-nvim',
     dependencies = {
       'echasnovski/mini.icons',

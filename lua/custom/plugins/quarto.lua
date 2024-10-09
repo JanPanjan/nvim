@@ -1,5 +1,7 @@
 return {
   {
+    enabled = false,
+    lazy = true,
     'quarto-dev/quarto-nvim',
     dependencies = {
       'jmbuhr/otter.nvim',

@@ -1,5 +1,7 @@
 return {
   {
+    enabled = false,
+    lazy = true,
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
