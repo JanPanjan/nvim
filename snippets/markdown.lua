@@ -124,7 +124,7 @@ return {
   s({ trig = '"', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, { t '\\text{', i(0, ''), t '}' }),
 
   -- Basic operations
-  s({ trig = 'sr', regTrig = true, wordTrig = false, snippetType = 'autosnippet' }, t '^{2}'),
+  -- s({ trig = 'sr', regTrig = true, wordTrig = false, snippetType = 'autosnippet' }, t '^{2}'),
   s({ trig = 'cb', regTrig = true, wordTrig = false, snippetType = 'autosnippet' }, t '^{3}'),
   s({ trig = 'rd', regTrig = true, wordTrig = true, snippetType = 'autosnippet' }, { t '^{', i(0, ''), t '}' }),
   s({ trig = '_', regTrig = true, wordTrig = false, snippetType = 'autosnippet' }, { t '_{', i(0, ''), t '}' }),
