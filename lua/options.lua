@@ -23,6 +23,15 @@ vim.opt.smartindent = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 4
 
+-- indentation for R files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "r",
+    callback = function ()
+      vim.opt_local.shiftwidth = 2
+      vim.opt_local.tabstop = 2
+    end
+})
+
 vim.opt.undofile = true
 
 vim.opt.ignorecase = true

@@ -93,6 +93,23 @@ return {
     )
   ),
 
+  -- basic md
+  s({ trig = 'link', regTrig = false, wordTrig = true }, fmta('[<>](<>) <>', { i(1), i(2), i(3) })),
+  s({ trig = 'italic', regTrig = false, wordTrig = true }, fmta('*<>* <>', { i(1), i(2) })),
+  s({ trig = 'bold', regTrig = false, wordTrig = true }, fmta('**<>** <>', { i(1), i(2) })),
+  s({ trig = 'code', regTrig = false, wordTrig = true }, fmta('`<>` <>', { i(1), i(2) })),
+  s({ trig = 'codeblock', regTrig = false, wordTrig = true }, fmta([[
+  ```
+  <>
+  ```
+  <>
+  ]], { i(1), i(2) })),
+
+  -- math
+  s({ trig = 'sum', regTrig = false, wordTrig = true }, fmta('\\sum_{<>}^{<>} <>', { i(1), i(2), i(3) }) ),
+  s({ trig = 'fak', regTrig = false, wordTrig = true }, fmta('\\frac{<>}{<>} <>', { i(1), i(2), i(3) }) ),
+  s({ trig = 'bb', regTrig = false, wordTrig = true }, fmta('\\mathbb{<>}<>', { i(1), i(2) })),
+
   -- Greek letters
   s({ trig = '@a', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, t '\\alpha', { condition = is_math_mode }),
   s({ trig = '@b', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, t '\\beta', { condition = is_math_mode }),
@@ -175,7 +192,6 @@ return {
 
   -- Symbols
   s({ trig = 'ooo', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, t '\\infty', { condition = is_math_mode }),
-  s({ trig = 'sum', regTrig = true, wordTrig = true, snippetType = 'autosnippet' }, t '\\sum', { condition = is_math_mode }),
   s({ trig = 'prod', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, t '\\prod', { condition = is_math_mode }),
   s(
     { trig = '\\sum', regTrig = false, wordTrig = true, snippetType = 'autosnippet' },

@@ -102,6 +102,10 @@ return {
   {
     'rebelot/kanagawa.nvim',
     config = function()
+      require('kanagawa').setup({
+	colors = { theme = { all = { ui = { bg_gutter = "none" } } } }
+      })
+
       -- vim.cmd 'colorscheme kanagawa'
       vim.cmd 'colorscheme kanagawa-dragon'
       -- vim.cmd 'colorscheme kanagawa-lotus'
@@ -127,12 +131,20 @@ return {
     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
     -- In Vim, compat mode is turned on as Lush only works in Neovim.
     dependencies = 'rktjmp/lush.nvim',
-    opts = {},
     config = function()
+      vim.g.tokyobones = {
+	italic_comments = false,
+      }
+
+      vim.g.rosebones = {
+	italic_comments = false,
+      }
       -- vim.cmd 'colorscheme zenwritten'
       -- vim.cmd 'colorscheme zenbones'
       -- vim.cmd 'colorscheme duckbones'
       -- vim.cmd 'colorscheme tokyobones'
+      -- vim.cmd 'colorscheme rosebones'
+
     end,
   },
 }

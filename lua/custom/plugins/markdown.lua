@@ -11,7 +11,7 @@ return {
 	},
 
 	{
-		enabled = false,
+		enabled = true,
 		lazy = true,
 		'MeanderingProgrammer/render-markdown.nvim',
 		opts = {},
@@ -21,20 +21,9 @@ return {
 	},
 
 	{
-		enabled = true,
-		lazy = true,
-		'OXY2DEV/markview.nvim',
-		ft = "markdown",
-		dependencies = {
-			'nvim-treesitter/nvim-treesitter',
-			'nvim-tree/nvim-web-devicons',
-		},
-	},
-
-	{
 		'tadmccorkle/markdown.nvim',
 		ft = 'markdown', -- or 'event = "VeryLazy"'
-		enabled = true,
+		enabled = false,
 		lazy = true,
 		opts = {},
 		config = function()
@@ -107,5 +96,16 @@ return {
 				end,
 			}
 		end,
+	},
+
+	{
+		enabled = true,
+		lazy = false,
+		'OXY2DEV/markview.nvim',
+		ft = "markdown",
+		dependencies = {
+			'nvim-treesitter/nvim-treesitter',
+			'nvim-tree/nvim-web-devicons',
+		},
 	},
 }
