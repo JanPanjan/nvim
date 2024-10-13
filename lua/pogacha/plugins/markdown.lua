@@ -1,4 +1,22 @@
 return {
+	{ 'bullets-vim/bullets.vim' },
+
+	{
+		enabled = false,
+		lazy = true,
+		'arminveres/md-pdf.nvim',
+		branch = 'main',
+		keys = {
+			{
+				'<leader>,',
+				function()
+					require('md-pdf').convert_md_to_pdf()
+				end,
+				desc = 'Markdown preview',
+			},
+		},
+	},
+
 	{
 		enabled = true,
 		lazy = true,
@@ -23,9 +41,8 @@ return {
 	{
 		'tadmccorkle/markdown.nvim',
 		ft = 'markdown', -- or 'event = "VeryLazy"'
-		enabled = false,
-		lazy = true,
-		opts = {},
+		enabled = true,
+		lazy = false,
 		config = function()
 			require('markdown').setup {
 				-- Disable all keymaps by setting mappings field to 'false'.

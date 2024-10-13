@@ -7,7 +7,7 @@ vim.o.linebreak = true
 vim.opt.number = true
 vim.o.numberwidth = 3
 vim.opt.relativenumber = true
-vim.opt.scrolloff = 999
+-- vim.opt.scrolloff = 1000
 vim.o.textwidth = 0
 
 vim.opt.mouse = 'a'

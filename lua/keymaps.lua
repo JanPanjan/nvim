@@ -8,15 +8,14 @@ map('n', '<leader>pl', '<cmd>Explore<CR>')
 -- Markdown
 map('n', '<leader>mp', '<cmd>MarkdownPreviewToggle<CR>')
 map('n', '<C-e>', '<cmd>Markview<CR>')
+map('n', '<leader>pp', '<cmd>lua require"nabla".popup()<CR>')
+map('n', '<leader>tv', '<cmd>lua require"nabla".toggle_virt()<CR>')
 
 -- Indent blankline
 -- map('n', '<leader>ibl', '<cmd>IBLToggle<CR>')
 
 -- Telescope colorscheme
 map('n', '<leader>cs', '<cmd>Telescope colorscheme<CR>')
-
--- nabla
-map('n', '<leader>pp', '<cmd>lua require"nabla".popup()<CR>')
 
 -- diagnostics
 map('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })

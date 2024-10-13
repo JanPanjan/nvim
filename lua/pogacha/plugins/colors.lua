@@ -1,40 +1,56 @@
 return {
-
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
+  { 'catppuccin/nvim', name = 'catppuccin',
     config = function()
       -- vim.cmd 'colorscheme catppuccin-mocha'
+      -- vim.cmd 'colorscheme catppuccin-macchiato'
       -- vim.cmd 'colorscheme catppuccin-frappe'
     end,
   },
 
   {
-    'kdheepak/monochrome.nvim',
+    'rebelot/kanagawa.nvim',
     config = function()
-      -- vim.cmd 'colorscheme monochrome'
+      require('kanagawa').setup({ colors = { theme = { all = { ui = { bg_gutter = "none" } } } } })
+      -- vim.cmd 'colorscheme kanagawa'
+      -- vim.cmd 'colorscheme kanagawa-dragon'
+      vim.cmd 'colorscheme kanagawa-lotus'
     end,
   },
 
   {
-    'yorumicolors/yorumi.nvim',
-    config = function()
-      -- vim.cmd 'colorscheme yorumi'
-    end,
+    'Rigellute/shades-of-purple.vim',
+    config = function ()
+      -- vim.cmd('colorscheme shades_of_purple')
+    end
   },
 
   {
-    'eldritch-theme/eldritch.nvim',
-    priority = 1000,
-    opts = {},
-    config = function()
-      -- vim.cmd 'colorscheme eldritch'
-    end,
+    "olimorris/onedarkpro.nvim",
+    config = function ()
+      -- vim.cmd("colorscheme onedark")
+    end
   },
 
   {
-    'ferdinandrau/lavish.nvim',
-    priority = 1000,
+    'srcery-colors/srcery-vim',
+    config = function()
+      vim.g.sonokai_enable_italic = false
+      -- vim.cmd.colorscheme('srcery')
+    end
+  },
+
+  {
+      'sainnhe/sonokai',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        vim.g.sonokai_enable_italic = false
+        -- vim.cmd.colorscheme('sonokai')
+      end
+  },
+
+  {
+    'ferdinandrau/lavish.nvim', priority = 1000,
     config = function()
       -- require('lavish').apply 'light'
       -- require('lavish').apply 'dark'
@@ -43,15 +59,6 @@ return {
 
   {
     { 'rose-pine/neovim', name = 'rose-pine' },
-  },
-
-  {
-    'navarasu/onedark.nvim',
-    config = function()
-      require('onedark').setup {
-	style = 'darker', -- dark, darker, cool, deep, warm, warmer
-      }
-    end,
   },
 
   {
@@ -73,42 +80,13 @@ return {
   },
 
   {
-    'ptdewey/darkearth-nvim',
-    config = function() end,
-  },
-
-  {
     'sainnhe/gruvbox-material',
-    opts = {
-      contrast = 'soft',
-    },
+    opts = { contrast = 'soft', },
     config = function()
       -- Optionally configure and load the colorscheme
       -- directly inside the plugin declaration.
-      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_enable_italic = false
       -- vim.cmd 'colorscheme gruvbox-material'
-    end,
-  },
-
-  {
-    'sho-87/kanagawa-paper.nvim',
-    priority = 1000,
-    opts = {},
-    config = function()
-      -- vim.cmd 'colorscheme kanagawa-paper'
-    end,
-  },
-
-  {
-    'rebelot/kanagawa.nvim',
-    config = function()
-      require('kanagawa').setup({
-	colors = { theme = { all = { ui = { bg_gutter = "none" } } } }
-      })
-
-      -- vim.cmd 'colorscheme kanagawa'
-      vim.cmd 'colorscheme kanagawa-dragon'
-      -- vim.cmd 'colorscheme kanagawa-lotus'
     end,
   },
 
@@ -121,24 +99,14 @@ return {
   },
 
   {
-    'e-q/okcolors.nvim',
-    config = function() end,
-  },
-
-  {
     'zenbones-theme/zenbones.nvim',
     -- Optionally install Lush. Allows for more configuration or extending the colorscheme
     -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
     -- In Vim, compat mode is turned on as Lush only works in Neovim.
     dependencies = 'rktjmp/lush.nvim',
     config = function()
-      vim.g.tokyobones = {
-	italic_comments = false,
-      }
-
-      vim.g.rosebones = {
-	italic_comments = false,
-      }
+      vim.g.tokyobones = { italic_comments = false, }
+      vim.g.rosebones = { italic_comments = false, }
       -- vim.cmd 'colorscheme zenwritten'
       -- vim.cmd 'colorscheme zenbones'
       -- vim.cmd 'colorscheme duckbones'

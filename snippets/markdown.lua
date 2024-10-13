@@ -109,6 +109,7 @@ return {
   s({ trig = 'sum', regTrig = false, wordTrig = true }, fmta('\\sum_{<>}^{<>} <>', { i(1), i(2), i(3) }) ),
   s({ trig = 'fak', regTrig = false, wordTrig = true }, fmta('\\frac{<>}{<>} <>', { i(1), i(2), i(3) }) ),
   s({ trig = 'bb', regTrig = false, wordTrig = true }, fmta('\\mathbb{<>}<>', { i(1), i(2) })),
+  s({ trig = 'xnn', regTrig = false, wordTrig = true }, fmta('x_{1}, ... , x_{n} <>', { i(1) })),
 
   -- Greek letters
   s({ trig = '@a', regTrig = false, wordTrig = true, snippetType = 'autosnippet' }, t '\\alpha', { condition = is_math_mode }),
