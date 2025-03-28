@@ -1,6 +1,10 @@
 local map = function(mode, lhs, rhs, opts) vim.keymap.set(mode, lhs, rhs, opts) end
 local t = require('telescope')
 
+map('n', 'gd', vim.lsp.buf.definition)
+map('n', 'gD', vim.lsp.buf.declaration)
+map('n', '<leader>d', vim.diagnostic.open_float)
+
 map('n', '<leader>ff',
 	function() t.builtin.current_buffer_fuzzy_find(t.no_preview({ cwd = '~/.config/nvim', })) end,
 	{ desc = 'PSN: fuzzy find in current buffer' })

@@ -44,6 +44,27 @@ require('lazy').setup({
 	},
 
 	{
+		"williamboman/mason.nvim",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig"
+		},
+		config = function()
+			require("mason").setup()
+			require("mason-lspconfig").setup({
+				auto_install = true,
+				ensure_installed = {
+					"pyright", "lua_ls", "clangd", "marksman"
+				}
+			})
+			require("lspconfig").lua_ls.setup({})
+			require("lspconfig").pyright.setup({})
+			require("lspconfig").marksman.setup({})
+			require("lspconfig").clangd.setup({})
+		end
+	},
+
+	{
 		'nvim-neo-tree/neo-tree.nvim',
 		enabled = true,
 		lazy = true,

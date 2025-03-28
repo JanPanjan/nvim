@@ -244,6 +244,7 @@ vim.api.nvim_create_user_command("Habafax", function()
 	vim.cmd.colorscheme("habamax")
 	vim.opt.background = "dark"
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = "NvimDarkGray3" })
+	vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "NvimDarkGray2" })
 end, {})
 
 vim.api.nvim_create_user_command("BreakCore", function()
