@@ -4,9 +4,10 @@ local on_attach = function(client, bufnr)
 		vim.keymap.set(mode, lhs, rhs, bufopts)
 	end
 
+	map('n', 'K', vim.lsp.buf.hover)
 	map('n', 'gd', vim.lsp.buf.definition)
 	map('n', 'gD', vim.lsp.buf.declaration)
-	map('n', '<leader>d', vim.diagnostic.open_float)
+	map('n', '<leader>D', vim.lsp.buf.type_definition)
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

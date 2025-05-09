@@ -229,15 +229,36 @@ end, {})
 
 vim.api.nvim_create_user_command("ForestDweller", function()
 	vim.cmd.colorscheme("retrobox")
+	vim.opt.background = "dark"
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = "#242424" })
 	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#242424" })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#242424" })
+	vim.api.nvim_set_hl(0, "Function", { fg = "#85bb46", bold = false })
+	vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "NvimDarkGray2" })
+	vim.api.nvim_set_hl(0, 'IndentLine', { fg = 'NvimDarkGray3' })
+	-- vim.api.nvim_set_hl(0, 'IndentLineCurrent', { fg = 'NvimDarkGray4' })
 end, {})
 
 vim.api.nvim_create_user_command("SunDweller", function()
 	vim.cmd.colorscheme("retrobox")
 	vim.opt.background = "light"
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = "#e5d4b1" })
+	vim.api.nvim_set_hl(0, "Function", { fg = "#8aab26", bold = false })
+end, {})
+
+vim.api.nvim_create_user_command("StarMud", function()
+	vim.cmd.colorscheme("lunaperche")
+	vim.opt.background = "light"
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = "NvimLightGray2" })
+	vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "NvimDarkGray2" })
+end, {})
+
+vim.api.nvim_create_user_command("LunarMud", function()
+	vim.cmd.colorscheme("lunaperche")
+	vim.opt.background = "dark"
+	vim.api.nvim_set_hl(0, "Normal", { bg = "NvimDarkGray1" })
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = "#262628" })
+	vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "NvimDarkGray2" })
 end, {})
 
 vim.api.nvim_create_user_command("Habafax", function()
@@ -247,17 +268,33 @@ vim.api.nvim_create_user_command("Habafax", function()
 	vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "NvimDarkGray2" })
 end, {})
 
+vim.api.nvim_create_user_command("KoiKai", function()
+	vim.cmd.colorscheme("unokai")
+	vim.opt.background = "dark"
+	vim.api.nvim_set_hl(0, "StatusLine", { bg = "#383933" })
+	vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "NvimDarkGray2" })
+	vim.api.nvim_set_hl(0, 'IndentLine', { fg = 'NvimDarkGray4' })
+	vim.api.nvim_set_hl(0, 'IndentLineCurrent', { fg = '#f92672' })
+end, {})
+
 vim.api.nvim_create_user_command("BreakCore", function()
 	vim.cmd.colorscheme("elflord")
-	vim.api.nvim_set_hl(0, "Normal", { bg = 'black' })
+	vim.api.nvim_set_hl(0, "Normal", { bg = '#030003' })
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = "NvimDarkMagenta" })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = "NvimDarkGray1" })
 	vim.api.nvim_set_hl(0, "TabLineSel", { bg = "NvimDarkMagenta" })
 	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NvimDarkGray1" })
 	vim.api.nvim_set_hl(0, "Comment", { fg = "#53669e" })
-	vim.api.nvim_set_hl(0, "WinSeparator", { bg = "NvimDarkGray1" })
+	vim.api.nvim_set_hl(0, "WinSeparator", { fg = "NvimDarkCyan" })
 	vim.api.nvim_set_hl(0, "LineNr", { bg = "NvimDarkGray1", fg = "NvimDarkCyan" })
 	vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "NvimDarkGray1" })
+	vim.api.nvim_set_hl(0, 'IndentLine', { fg = '#400000' })
+	vim.api.nvim_set_hl(0, 'IndentLineCurrent', { fg = '#800000' })
+end, {})
+
+vim.api.nvim_create_user_command("PrincessPeach", function()
+	vim.cmd.colorscheme("peachpuff")
+	vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#ffdab9", bg = "none" })
 end, {})
 
 vim.api.nvim_create_user_command("Invis", function()
@@ -269,22 +306,25 @@ end, {})
 
 -- vim.api.nvim_command('QuietLight')
 -- vim.api.nvim_command('QuietDark')
+--
 -- vim.api.nvim_command('DefaultLight')
 -- vim.api.nvim_command('DefaultDark')
+--
 -- vim.api.nvim_command('BreakCore')
--- vim.api.nvim_command('ForestDweller')
+--
+-- vim.api.nvim_command('PrincessPeach')
+--
+vim.api.nvim_command('ForestDweller')
 -- vim.api.nvim_command('SunDweller')
-vim.api.nvim_command('Habafax')
--- vim.cmd.colorscheme("monokai-pro-ristretto")
--- vim.cmd.colorscheme("habamax")
+--
+-- vim.api.nvim_command('Habafax')
+--
+-- vim.api.nvim_command('StarMud')
+-- vim.api.nvim_command('LunarMud')
+--
+-- vim.api.nvim_command('KoiKai')
+-- vim.cmd.colorscheme('onedark')
+-- vim.cmd.colorscheme('tokyonight')
+-- vim.cmd.colorscheme('monokai-pro-machine')
 
-vim.g.everforest_background = "medium" -- hard, medium, soft
-vim.g.everforest_enable_italics = 0
-vim.g.everforest_ui_contrast = "soft"
-vim.g.everforest_spell_foreground = "colored"
-vim.g.everforest_float_style = "dim"
--- vim.opt.background = "light"
-
--- vim.cmd.colorscheme("everforest")
-
--- vim.api.nvim_command('Invis')
+vim.api.nvim_command('Invis')

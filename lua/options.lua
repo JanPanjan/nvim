@@ -1,8 +1,5 @@
--- Powershell as default shell inside of Neovim
+-- Bash as default shell inside of Neovim
 vim.opt.shell          = 'bash'
-vim.opt.shellcmdflag   = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command'
-vim.opt.shellquote     = ''
-vim.opt.shellxquote    = ''
 
 -- Enables mouse functionality in neovim
 -- [n]ormal, [v]isual, [i]nsert, [c]ommand-line, [a]ll

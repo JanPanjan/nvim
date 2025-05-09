@@ -1,9 +1,20 @@
 local map = function(mode, lhs, rhs, opts) vim.keymap.set(mode, lhs, rhs, opts) end
 local t = require('telescope')
 
-map('n', 'gd', vim.lsp.buf.definition)
-map('n', 'gD', vim.lsp.buf.declaration)
-map('n', '<leader>d', vim.diagnostic.open_float)
+map('n', '<leader>t', '<cmd>VimtexTocToggle<CR>',
+	{ desc = 'PSN: toggle Vimtex table of contents' })
+
+map('n', '<leader>q', vim.diagnostic.setloclist,
+	{ desc = "PSN: make a location list" })
+
+map('n', '<leader>d', vim.diagnostic.open_float,
+	{ desc = "PSN: open floating diagnostic window" })
+
+map('n', '[d', vim.diagnostic.goto_prev,
+	{ desc = "PSN: move to previous diagnostic" })
+
+map('n', ']d', vim.diagnostic.goto_next,
+	{ desc = "PSN: move to next diagnostic" })
 
 map('n', '<leader>ff',
 	function() t.builtin.current_buffer_fuzzy_find(t.no_preview({ cwd = '~/.config/nvim', })) end,
@@ -131,5 +142,30 @@ map('n', '<C-k>', '<C-w><C-k>',
 map('n', '<leader>pl', '<cmd>Explore <CR>',
 	{ desc = 'PSN: open netrw explorer' })
 
-map('n', '\\', '<cmd>Neotree reveal <CR>',
-	{ desc = 'PSN: open file tree' })
+local function toggle_neotree_smart()
+	local neotree_window_id = nil
+	local current_window_id = vim.api.nvim_get_current_win()
+	local windows = vim.api.nvim_list_wins()
+
+	for _, win_id in ipairs(windows) do
+		local buf_id = vim.api.nvim_win_get_buf(win_id)
+		local filetype = vim.api.nvim_buf_get_option(buf_id, 'filetype')
+		if filetype == 'neo-tree' then
+			neotree_window_id = win_id
+			break
+		end
+	end
+
+	if neotree_window_id then
+		if current_window_id == neotree_window_id then
+			vim.cmd('Neotree close')
+		else
+			vim.api.nvim_set_current_win(neotree_window_id)
+		end
+	else
+		vim.cmd('Neotree toggle')
+	end
+end
+
+map('n', '\\', toggle_neotree_smart,
+	{ desc = "PSN: toggle neo-tree (smart focus/close)" })

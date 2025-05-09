@@ -22,4 +22,3 @@ M.no_preview = function(opts)
 end
 
 return M
-
