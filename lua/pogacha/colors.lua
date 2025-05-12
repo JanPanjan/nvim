@@ -13,6 +13,17 @@ return {
 		end
 	},
 
-	{ 'navarasu/onedark.nvim' },
-	{ "folke/tokyonight.nvim" },
+	{
+		'navarasu/onedark.nvim',
+		config = function()
+			require('onedark').setup({
+				-- > **Options:**  dark, darker, cool, deep, warm, warmer, light
+				style = "cool",
+				transparent_background = false,
+			})
+		end
+	},
+
+	{ 'folke/tokyonight.nvim' },
+	{ 'Domeee/mosel.nvim' },
 }
