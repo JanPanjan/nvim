@@ -159,15 +159,19 @@ local tabline      = {
 vim.api.nvim_create_user_command("DefaultDark", function()
 	vim.o.background = "dark"
 	vim.cmd.colorscheme('default')
-	local normal_bg = 'NvimDarkGray3'
-	vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = 'NvimLightYellow' })
+	-- local normal_bg = 'NvimDarkGray3'
+	local normal_bg = 'NvimDarkGray1'
+	-- vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = 'NvimLightYellow' })
+	vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = 'LightGreen' })
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'NvimDarkGray2', fg = 'NvimLightBlue' })
 	vim.api.nvim_set_hl(0, "ModeMsg", { bg = 'none', fg = 'NvimLightYellow' })
 	vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
 	vim.api.nvim_set_hl(0, "Normal", { bg = normal_bg })
 	vim.api.nvim_set_hl(0, "ZenBg", { bg = normal_bg })
+	vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "NvimDarkGray1" })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = 'NvimDarkGray2' })
 	vim.api.nvim_set_hl(0, "Special", { fg = 'NvimLightGray2' })
+	vim.api.nvim_set_hl(0, "Identifier", { fg = 'LightBlue' })
 	vim.api.nvim_set_hl(0, "Function", { fg = 'NvimLightBlue' })
 	vim.api.nvim_set_hl(0, "Statement", { fg = 'NvimLightGray2', bold = false })
 end, {})
@@ -235,8 +239,10 @@ vim.api.nvim_create_user_command("ForestDweller", function()
 	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#242424" })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#242424" })
 	vim.api.nvim_set_hl(0, "Function", { fg = "#85bb46", bold = false })
+	vim.api.nvim_set_hl(0, "String", { fg = "#aabf66", bold = false })
 	vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "NvimDarkGray2" })
 	vim.api.nvim_set_hl(0, 'IndentLine', { fg = 'NvimDarkGray3' })
+	vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = '#85bb46' })
 	-- vim.api.nvim_set_hl(0, 'IndentLineCurrent', { fg = 'NvimDarkGray4' })
 end, {})
 

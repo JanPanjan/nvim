@@ -13,7 +13,7 @@ return {
 		end
 	},
 
-	{
+  {
 		'navarasu/onedark.nvim',
 		config = function()
 			require('onedark').setup({
@@ -25,6 +25,7 @@ return {
 	},
 
 	{
+
 		'sainnhe/gruvbox-material',
 		config = function()
 			vim.cmd([[
@@ -45,4 +46,5 @@ return {
 	},
 
 	{ 'folke/tokyonight.nvim' },
+	{ 'navarasu/onedark.nvim' },
 }
