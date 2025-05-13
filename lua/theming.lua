@@ -324,9 +324,9 @@ end, {})
 -- vim.api.nvim_command('LunarMud')
 --
 -- vim.api.nvim_command('KoiKai')
-vim.cmd.colorscheme('onedark')
+-- vim.cmd.colorscheme('onedark')
 -- vim.cmd.colorscheme('tokyonight')
 -- vim.cmd.colorscheme('monokai-pro-machine')
--- vim.cmd.colorscheme('mosel')
+vim.cmd.colorscheme('gruvbox-material')
 
 -- vim.api.nvim_command('Invis')
