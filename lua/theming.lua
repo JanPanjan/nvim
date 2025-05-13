@@ -234,6 +234,7 @@ end, {})
 vim.api.nvim_create_user_command("ForestDweller", function()
 	vim.cmd.colorscheme("retrobox")
 	vim.opt.background = "dark"
+	vim.api.nvim_set_hl(0, "Comment", { fg = "NvimDarkGray4" })
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = "#242424" })
 	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#242424" })
 	vim.api.nvim_set_hl(0, "CursorLine", { bg = "#242424" })

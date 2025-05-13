@@ -16,14 +16,21 @@ map('n', '[d', vim.diagnostic.goto_prev,
 map('n', ']d', vim.diagnostic.goto_next,
 	{ desc = "PSN: move to next diagnostic" })
 
+-- map('n', '<leader>ff',
+-- 	function() t.builtin.current_buffer_fuzzy_find(t.no_preview({ cwd = '~/.config/nvim', })) end,
+-- 	{ desc = 'PSN: fuzzy find in current buffer' })
+--
 map('n', '<leader>ff',
-	function() t.builtin.current_buffer_fuzzy_find(t.no_preview({ cwd = '~/.config/nvim', })) end,
+	function() t.builtin.current_buffer_fuzzy_find() end,
 	{ desc = 'PSN: fuzzy find in current buffer' })
 
 map('n', '<leader><leader>', t.builtin.buffers,
 	{ desc = 'PSN: open list of open buffers' })
 
-map('n', '<leader>sf', function() t.builtin.find_files(t.no_preview({ prompt_title = "Root" })) end,
+-- map('n', '<leader>sf', function() t.builtin.find_files(t.no_preview({ prompt_title = "Root" })) end,
+-- 	{ desc = 'PSN: search files in current root directory' })
+--
+map('n', '<leader>sf', function() t.builtin.find_files() end,
 	{ desc = 'PSN: search files in current root directory' })
 
 map({ 'n', 't' }, '<leader>vs', 'V:s/',
