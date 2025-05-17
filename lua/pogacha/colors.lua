@@ -13,7 +13,7 @@ return {
 		end
 	},
 
-  {
+	{
 		'navarasu/onedark.nvim',
 		config = function()
 			require('onedark').setup({
@@ -45,6 +45,19 @@ return {
 		end,
 	},
 
-	{ 'folke/tokyonight.nvim' },
+	{
+		'folke/tokyonight.nvim',
+		config = function()
+			require('tokyonight').setup({
+				style = 'storm',
+				styles = {
+					comments = { italic = false },
+					keywords = { italic = false },
+				},
+			})
+		end
+	},
+
 	{ 'navarasu/onedark.nvim' },
+	{ "Domeee/mosel.nvim" },
 }
