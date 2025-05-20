@@ -30,6 +30,20 @@ require('lazy').setup({
 	require('pogacha.colors'),
 	require('pogacha.vimtex'),
 	{ "OXY2DEV/markview.nvim" },
-	{ "folke/todo-comments.nvim",            dependencies = { "nvim-lua/plenary.nvim" } },
-	{ 'lukas-reineke/indent-blankline.nvim', config = function() require("ibl").setup() end },
+	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+	{
+		'lukas-reineke/indent-blankline.nvim',
+		enabled = true,
+		config = function()
+			require("ibl").setup({
+				indent = {
+					char = '│'
+				},
+				scope = {
+					show_start = false,
+					show_end = false,
+				},
+			})
+		end
+	},
 })

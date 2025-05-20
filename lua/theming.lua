@@ -146,23 +146,20 @@ WinBar		Window bar of current window.
 WinBarNC	Window bar of not-current windows.
 --]]
 
--- Enables cursorline
-vim.opt.cursorline = true
-
 -- Sets custom tabline
-local tabline      = {
+local tabline = {
 	' %M',
 	' %t',
 }
--- vim.o.tabline      = table.concat(tabline, '')
+vim.o.tabline = table.concat(tabline, '')
 
 vim.api.nvim_create_user_command("DefaultDark", function()
 	vim.o.background = "dark"
 	vim.cmd.colorscheme('default')
-	-- local normal_bg = 'NvimDarkGray3'
-	local normal_bg = 'NvimDarkGray1'
-	-- vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = 'NvimLightYellow' })
+	local normal_bg = 'NvimDarkGray3'
+	-- local normal_bg = 'NvimDarkGray1'
 	vim.api.nvim_set_hl(0, "Directory", { bg = 'none', fg = 'LightGreen' })
+	vim.api.nvim_set_hl(0, "String", { fg = 'LightGreen' })
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = 'NvimDarkGray2', fg = 'NvimLightBlue' })
 	vim.api.nvim_set_hl(0, "ModeMsg", { bg = 'none', fg = 'NvimLightYellow' })
 	vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
@@ -264,8 +261,12 @@ vim.api.nvim_create_user_command("LunarMud", function()
 	vim.cmd.colorscheme("lunaperche")
 	vim.opt.background = "dark"
 	vim.api.nvim_set_hl(0, "Normal", { bg = "NvimDarkGray1" })
+	vim.api.nvim_set_hl(0, "Comment", { fg = "#404341" })
 	vim.api.nvim_set_hl(0, "StatusLine", { bg = "#262628" })
 	vim.api.nvim_set_hl(0, "VertSplit", { bg = "none", fg = "NvimDarkGray2" })
+	vim.api.nvim_set_hl(0, "Function", { fg = "#a8ceb5" })
+	vim.api.nvim_set_hl(0, "LineNr", { bg = "NvimDarkGray1", fg = "NvimDarkCyan" })
+	vim.api.nvim_set_hl(0, "String", { fg = "#bd659d" })
 end, {})
 
 vim.api.nvim_create_user_command("Habafax", function()
@@ -311,29 +312,23 @@ vim.api.nvim_create_user_command("Invis", function()
 	vim.api.nvim_set_hl(0, "ZenBg", { bg = 'none' })
 end, {})
 
--- vim.api.nvim_command('QuietLight')
--- vim.api.nvim_command('QuietDark')
---
--- vim.api.nvim_command('DefaultLight')
 -- vim.api.nvim_command('DefaultDark')
---
--- vim.api.nvim_command('BreakCore')
---
--- vim.api.nvim_command('PrincessPeach')
---
+-- vim.api.nvim_command('DefaultLight')
+-- vim.api.nvim_command('QuietDark')
+-- vim.api.nvim_command('QuietLight')
 -- vim.api.nvim_command('ForestDweller')
 -- vim.api.nvim_command('SunDweller')
---
--- vim.api.nvim_command('Habafax')
---
 -- vim.api.nvim_command('StarMud')
 -- vim.api.nvim_command('LunarMud')
---
+-- vim.api.nvim_command('Habafax')
 -- vim.api.nvim_command('KoiKai')
+-- vim.api.nvim_command('BreakCore')
+-- vim.api.nvim_command('PrincessPeach')
+
 -- vim.cmd.colorscheme('onedark')
 -- vim.cmd.colorscheme('tokyonight')
 -- vim.cmd.colorscheme('monokai-pro-machine')
-vim.cmd.colorscheme('gruvbox-material')
+-- vim.cmd.colorscheme('gruvbox-material')
 -- vim.cmd.colorscheme('mosel')
 
-vim.api.nvim_command('Invis')
+-- vim.api.nvim_command('Invis')
