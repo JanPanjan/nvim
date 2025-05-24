@@ -35,5 +35,4 @@ require('lazy').setup({
 	require('pogacha.ibl'),
 	require('pogacha.typst'),
 	require('pogacha.obsidian'),
-	require('pogacha.iron')
 })
