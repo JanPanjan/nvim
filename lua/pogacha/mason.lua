@@ -9,7 +9,7 @@ return {
 		require("mason-lspconfig").setup({
 			auto_install = true,
 			ensure_installed = {
-				"basedpyright", "lua_ls", "clangd", "marksman", "rust_analyzer"
+				"basedpyright", "lua_ls", "clangd", "marksman", "rust_analyzer", "jdtls"
 			}
 		})
 		require("lspconfig").lua_ls.setup({})
@@ -17,6 +17,7 @@ return {
 		require("lspconfig").marksman.setup({})
 		require("lspconfig").clangd.setup({})
 		require("lspconfig").rust_analyzer.setup({})
-		require("lspconfig").ocamllsp.setup({})
+		-- require("lspconfig").ocamllsp.setup({})
+		require('lspconfig').jdtls.setup({})
 	end
 }

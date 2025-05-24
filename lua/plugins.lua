@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 	require('pogacha.treesitter'),
 	require('pogacha.telescope'),
+	require('pogacha.java'),
 	require('pogacha.mason'),
 	require('pogacha.neotree'),
 	require('pogacha.nvimspider'),
@@ -29,21 +30,10 @@ require('lazy').setup({
 	require('pogacha.nvim-r'),
 	require('pogacha.colors'),
 	require('pogacha.vimtex'),
-	{ "OXY2DEV/markview.nvim" },
+	-- require('pogacha.markview'),
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-	{
-		'lukas-reineke/indent-blankline.nvim',
-		enabled = true,
-		config = function()
-			require("ibl").setup({
-				indent = {
-					char = '│'
-				},
-				scope = {
-					show_start = false,
-					show_end = false,
-				},
-			})
-		end
-	},
+	require('pogacha.ibl'),
+	require('pogacha.typst'),
+	require('pogacha.obsidian'),
+	require('pogacha.iron')
 })

@@ -60,4 +60,5 @@ return {
 
 	{ 'navarasu/onedark.nvim' },
 	{ "Domeee/mosel.nvim" },
+	{ "slugbyte/lackluster.nvim" },
 }

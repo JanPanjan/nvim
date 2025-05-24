@@ -36,3 +36,63 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 	end
 })
+
+-- vim.api.nvim_create_autocmd('BufEnter', {
+-- 	callback = function()
+-- 		if vim.filetype.match({ buf = 0 }) == "python" then
+-- 			local print_string = function()
+-- 				vim.cmd('normal! da\"h')
+-- 				vim.cmd('normal! aprint(')
+-- 				vim.cmd('normal! p')
+-- 				vim.cmd('normal! a)')
+-- 				vim.cmd('normal! F)')
+-- 			end
+--
+-- 			local print_digit = function()
+-- 				vim.cmd('normal! B')
+-- 				vim.cmd('normal! dE')
+-- 				vim.cmd('normal! aprint(, ')
+-- 				vim.cmd('normal! p')
+-- 				vim.cmd('normal! a)')
+-- 				vim.cmd('normal! F)')
+-- 			end
+--
+-- 			vim.keymap.set("n",
+-- 				"<leader>ps",
+-- 				print_string,
+-- 				{ desc = "C: surround string in `printf` function" })
+--
+-- 			vim.keymap.set("n",
+-- 				"<leader>pd",
+-- 				print_digit,
+-- 				{ desc = "C: surround number (or variable) in `printf` function with '%d'" })
+-- 		elseif vim.filetype.match({ buf = 0 }) == "c" then
+-- 			local print_string = function()
+-- 				vim.cmd('normal! da\"h')
+-- 				vim.cmd('normal! aprintf("%s\\n", ')
+-- 				vim.cmd('normal! p')
+-- 				vim.cmd('normal! a);')
+-- 				vim.cmd('normal! F(l')
+-- 			end
+--
+-- 			local print_digit = function()
+-- 				vim.cmd('normal! B')
+-- 				vim.cmd('normal! dE')
+-- 				vim.cmd('normal! aprintf("%d\\n", ')
+-- 				vim.cmd('normal! p')
+-- 				vim.cmd('normal! a);')
+-- 				vim.cmd('normal! F(l')
+-- 			end
+--
+-- 			vim.keymap.set("n",
+-- 				"<leader>ps",
+-- 				print_string,
+-- 				{ desc = "C: surround string in `printf` function" })
+--
+-- 			vim.keymap.set("n",
+-- 				"<leader>pd",
+-- 				print_digit,
+-- 				{ desc = "C: surround number (or variable) in `printf` function with '%d'" })
+-- 		end
+-- 	end
+-- })

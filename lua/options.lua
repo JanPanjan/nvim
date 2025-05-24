@@ -59,7 +59,7 @@ vim.opt.cursorline     = false
 -- Sets mode in which the cursorline can be concealed
 vim.o.concealcursor    = 'n'
 -- Determines how text with concealed syntax is shown
-vim.o.conceallevel     = 0 -- 0 to 3
+vim.o.conceallevel     = 2 -- 0 to 3
 
 -- Disables word wraping at the end of the screen
 vim.o.wrap             = false
