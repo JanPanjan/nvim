@@ -5,10 +5,15 @@ return {
 			require("monokai-pro").setup({
 				transparent_background = false,
 				filter = "machine",
-				background_clear = {
-					"nvim-tree",
-					"neo-tree"
-				}
+				day_night = {
+					enable = true,
+					day_filter = "pro",
+					night_filter = "spectrum",
+				},
+				indent_blankline = {
+					context_highlight = "pro",
+					context_start_underline = false,
+				},
 			})
 		end
 	},
@@ -16,10 +21,16 @@ return {
 	{
 		'navarasu/onedark.nvim',
 		config = function()
+			local s = "warmer"
 			require('onedark').setup({
 				-- > **Options:**  dark, darker, cool, deep, warm, warmer, light
-				style = "cool",
+				style = s,
 				transparent_background = false,
+				toggle_style_key = "<leader>od",
+				toggle_style_list = { s, 'light' },
+				code_style = {
+					keywords = 'italic'
+				}
 			})
 		end
 	},
@@ -58,7 +69,20 @@ return {
 		end
 	},
 
-	{ 'navarasu/onedark.nvim' },
 	{ "Domeee/mosel.nvim" },
-	{ "slugbyte/lackluster.nvim" },
+
+	{
+		"slugbyte/lackluster.nvim",
+		config = function()
+			require("lackluster").setup({
+				tweak_syntax = {
+					comment = require("lackluster").color.gray4, -- or gray5
+				},
+				tweak_background = {
+					-- normal = 'default', -- main background
+					-- normal = 'none', -- transparent
+				},
+			})
+		end
+	},
 }
