@@ -85,4 +85,8 @@ return {
 			})
 		end
 	},
+
+	{ 'foxbunny/vim-amber' },
+	{ "EdenEast/nightfox.nvim" },
+	{ 'foxoman/vim-helix' },
 }

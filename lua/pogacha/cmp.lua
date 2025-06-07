@@ -38,7 +38,7 @@ return {
 			)
 
 			cmp.setup {
-				performance = { max_view_entries = 20, },
+				performance = { max_view_entries = 40, },
 				completion = { completeopt = 'menu,menuone,preview,noselect' },
 
 				snippet = {
