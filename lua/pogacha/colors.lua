@@ -21,11 +21,11 @@ return {
 	{
 		'navarasu/onedark.nvim',
 		config = function()
-			local s = "warmer"
+			local s = "darker"
 			require('onedark').setup({
 				-- > **Options:**  dark, darker, cool, deep, warm, warmer, light
 				style = s,
-				transparent_background = false,
+				transparent_background = true,
 				toggle_style_key = "<leader>od",
 				toggle_style_list = { s, 'light' },
 				code_style = {
@@ -86,8 +86,22 @@ return {
 		end
 	},
 
+	{
+		"jackplus-xyz/binary.nvim",
+		opts = {
+			style = "system",                -- Theme style: "system" | "light" | "dark"
+			colors = {                       -- Colors used for the "light" theme; reversed automatically for "dark"
+				fg = "#000000",                -- Foreground color
+				bg = "#ffffff",                -- Background color
+			},
+			use_default_reversed_group = true, -- Use the default `reversed_group` for a better startup experience
+			reversed_group = {},             -- Highlight groups with reversed `fg` and `bg` (e.g., `Search`, `Visual`)
+		}
+	},
+
 	{ 'foxbunny/vim-amber' },
 	{ "EdenEast/nightfox.nvim" },
 	{ 'foxoman/vim-helix' },
 	{ "webhooked/kanso.nvim" },
+
 }

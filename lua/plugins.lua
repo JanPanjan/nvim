@@ -34,5 +34,6 @@ require('lazy').setup({
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
 	require('pogacha.ibl'),
 	require('pogacha.typst'),
+	require('pogacha.omnipreview')
 	-- require('pogacha.obsidian'),
 })

@@ -49,7 +49,7 @@ vim.opt.splitbelow     = true
 -- Number of spaces to use for each (auto)indent
 -- Enables displaying of whitespace characters
 vim.opt.tabstop        = 4
-vim.opt.expandtab      = false
+vim.opt.expandtab      = true
 vim.opt.shiftwidth     = 0 -- 0 uses tabstop value
 vim.opt.list           = true
 vim.opt.listchars      = { tab = '   ', trail = '·', nbsp = '␣' }
