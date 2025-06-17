@@ -9,19 +9,19 @@ map('n', '[d', vim.diagnostic.get_prev, { desc = "PSN: move to previous diagnost
 map('n', ']d', vim.diagnostic.get_next, { desc = "PSN: move to next diagnostic" })
 
 map('n', '<leader>ff', function() t.builtin.current_buffer_fuzzy_find(t.no_preview({})) end,
-	{ desc = 'PSN: fuzzy find in current buffer' })
+  { desc = 'PSN: fuzzy find in current buffer' })
 
 map('n', '<leader><leader>', function() t.builtin.buffers(t.no_preview({})) end,
-	{ desc = 'PSN: open list of open buffers' })
+  { desc = 'PSN: open list of open buffers' })
 
 map('n', '<leader>sf', function() t.builtin.find_files(t.no_preview({ prompt_title = vim.fn.getcwd() })) end,
-	{ desc = 'PSN: search files in current root directory' })
+  { desc = 'PSN: search files in current root directory' })
 
 map({ 'n', 't' }, '<leader>vs', 'V:s/', { desc = "PSN: enter substitute mode for current line", remap = true })
 map({ 'n', 't' }, '<leader>fs', ':%s/', { desc = "PSN: enter global substitute mode", remap = true })
 
 map({ 'n', 't' }, '|', '<cmd>tabnew<CR><cmd>terminal<CR>',
-	{ desc = "PSN: open new tab and enter terminal mode", remap = true })
+  { desc = "PSN: open new tab and enter terminal mode", remap = true })
 map('t', '<esc><esc>', '<C-\\><C-N>', { desc = "PSN: exit insert mode in terminal mode" })
 
 map({ 'v', 'n' }, 'ge', '$', { desc = 'PSN: go to last character of line. remap "$"', remap = true })
@@ -44,14 +44,18 @@ map('n', ',', ':', { desc = 'PSN: enter command mode with comma' })
 map('i', '<C-Space>', '<C-x><C-o>', { desc = 'PSN: Use ctrl+space for omnifunc' })
 map('i', '<A-Space>', '<C-x><C-u>', { desc = 'PSN: Use alt+space for completefunc' })
 
-map('n', '<leader>z', '<cmd>ZenMode<CR>', { desc = 'PSN: enable zen mode' })
+map('n', '<leader>z', function()
+  vim.api.nvim_set_hl(0, "ZenBg", { link = "Normal" })
+  vim.cmd("ZenMode")
+end, { desc = 'PSN: enable zen mode' })
+
 map('n', '<leader>tw', '<cmd>TWToggle<CR>', { desc = 'PSN: toggle typewriter mode' })
 map({ 'n', 'i' }, '<C-p>', '<cmd>Markview toggle<CR>', { desc = 'PSN: toggle markview rendering' })
 
 map('n', '<leader>sw', '<cmd>set wrap<CR>', { desc = 'PSN: enable word wrap' })
 map('n', '<leader>nw', '<cmd>set nowrap<CR>', { desc = 'PSN: disable word wrap' })
 map('n', '<leader>ss', '<cmd>source<CR><cmd>echo "sourced" expand("%:t")<CR>',
-	{ desc = "PSN: source current file" })
+  { desc = "PSN: source current file" })
 
 map('n', '<A-a>', '<cmd>bprev<CR>', { desc = 'PSN: move to previous buffer' })
 map('n', '<A-d>', '<cmd>bnext<CR>', { desc = 'PSN: move to next buffer' })
@@ -68,4 +72,4 @@ map('n', '<C-j>', '<C-w><C-j>', { desc = 'PSN: navigate to bottom window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'PSN: navigate to upper window' })
 
 map('n', '<leader>pl', '<cmd>Explore <CR>', { desc = 'PSN: open netrw explorer' })
-map('n', '\\', '<cmd>Neotree float<CR>', { desc = "PSN: toggle neo-tree (smart focus/close)" })
+map('n', '\\', '<cmd>Neotree left<CR>', { desc = "PSN: toggle neo-tree" })

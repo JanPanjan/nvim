@@ -25,10 +25,10 @@ vim.opt.number         = true
 vim.opt.relativenumber = true
 
 -- Sets number line column width
-vim.o.numberwidth      = 4
+vim.o.numberwidth      = 5
 
 -- Enables signcolumn
-vim.opt.signcolumn     = 'no'
+vim.opt.signcolumn     = 'yes'
 
 -- Enables tabline
 vim.opt.showtabline    = 1
@@ -60,6 +60,10 @@ vim.opt.cursorline     = false
 vim.o.concealcursor    = 'n'
 -- Determines how text with concealed syntax is shown
 vim.o.conceallevel     = 2 -- 0 to 3
+-- Sets colorcolumn
+vim.o.colorcolumn      = "98"
+-- Sets word wrap margin (characters from the right edge )
+vim.o.wrapmargin       = 0
 
 -- Disables word wraping at the end of the screen
 vim.o.wrap             = false
@@ -99,5 +103,5 @@ vim.opt.autoread       = true
 
 -- Enable true colors if supported
 if (vim.fn.has('termguicolors')) then
-	vim.opt.termguicolors = true
+    vim.opt.termguicolors = true
 end
