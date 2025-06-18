@@ -192,19 +192,31 @@ vim.api.nvim_create_user_command("QuietDark", function()
   vim.o.background = "dark"
   vim.cmd.colorscheme('quiet')
 
-  -- vim.api.nvim_set_hl(0, "Normal", { bg = '#000704' })
-  vim.api.nvim_set_hl(0, "Normal", { bg = 'black' })
+  local gray1 = "#252525"
+  local gray2 = "#171717"
+  local gray3 = "#101010"
+  local text1 = "#aaaaaa"
+  local string = "#9a9f8f" -- a little yellowish
+  local text2 = "#888888"
+  local text3 = "#666666"
+
+  vim.api.nvim_set_hl(0, "Normal", { bg = '#010101', fg = text3 })
   vim.api.nvim_set_hl(0, "ZenBg", { link = "Normal" })
   vim.api.nvim_set_hl(0, "CursorLine", { bg = 'black' })
-  vim.api.nvim_set_hl(0, "StatusLine", { bg = 'NvimDarkGray2', fg = 'white' })
+  vim.api.nvim_set_hl(0, "StatusLineNC", { bold = false, fg = text1, bg = 'gray1' })
+  vim.api.nvim_set_hl(0, "StatusLine", { bg = gray2, fg = text3 })
   vim.api.nvim_set_hl(0, "TabLineFill", { bg = 'black', fg = 'white' })
   vim.api.nvim_set_hl(0, "TabLineSel", { bg = 'NvimDarkGray2', fg = 'NvimLightGray1' })
   vim.api.nvim_set_hl(0, "LineNr", { bg = 'black' })
+
   vim.api.nvim_set_hl(0, "Comment", { fg = 'gray', bold = false })
   vim.api.nvim_set_hl(0, "Visual", { bg = '#002504' })
-  vim.api.nvim_set_hl(0, "Function", { fg = 'NvimLightGray2' })
-  vim.api.nvim_set_hl(0, "Identifier", { fg = 'NvimLightGray3' })
-  vim.api.nvim_set_hl(0, "Special", { fg = 'NvimLightGray1' })
+  vim.api.nvim_set_hl(0, "Function", { fg = text2 })
+  vim.api.nvim_set_hl(0, "String", { fg = string })
+  vim.api.nvim_set_hl(0, "Identifier", { fg = text1 })
+  vim.api.nvim_set_hl(0, "Special", { fg = text1 })
+  vim.api.nvim_set_hl(0, "Statement", { fg = text1 })
+
   vim.api.nvim_set_hl(0, "Pmenu", { bg = 'gray', fg = 'NvimDarkGray1' })
   vim.api.nvim_set_hl(0, "PmenuSel", { fg = 'white', bg = 'NvimDarkGray4' })
   vim.api.nvim_set_hl(0, "PmenuSbar", { bg = 'NvimDarkGray1' })
@@ -226,6 +238,9 @@ vim.api.nvim_create_user_command("Rosemarry", function()
   vim.api.nvim_set_hl(0, "Function", { fg = "black", bold = true })
   vim.api.nvim_set_hl(0, "String", { fg = "#76af74", bold = false })
   vim.api.nvim_set_hl(0, "Title", { bold = true })
+  vim.api.nvim_set_hl(0, "@markup.link.label.markdown_inline", { underline = true, fg = "#76af74" })
+  vim.api.nvim_set_hl(0, "@markup.list.checked.markdown", { underline = false, bg = "#acddaa" })
+  vim.api.nvim_set_hl(0, "@markup.list.unchecked.markdown", { underline = false, fg = "black" })
 
   vim.api.nvim_set_hl(0, "Visual", { bg = '#acddaa' })
   vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = "NvimLightGray2" })
@@ -357,7 +372,6 @@ vim.api.nvim_create_user_command("PrincessPeach", function()
 end, {})
 
 vim.api.nvim_create_user_command("Kanso", function()
-  -- vim.cmd.colorscheme("kanso-pearl")
   vim.cmd.colorscheme("kanso-zen")
   vim.api.nvim_set_hl(0, "Normal", { bg = "#1f2329" })
   vim.opt.cursorline = true
@@ -370,34 +384,4 @@ vim.api.nvim_create_user_command("Invis", function()
   vim.api.nvim_set_hl(0, "ZenBg", { bg = 'none' })
 end, {})
 
--- vim.api.nvim_command('DefaultDark')
--- vim.api.nvim_command('DefaultLight')
--- vim.api.nvim_command('QuietDark')
 vim.api.nvim_command('Rosemarry')
--- vim.api.nvim_command('ForestDweller')
--- vim.api.nvim_command('SunDweller')
--- vim.api.nvim_command('StarMud')
--- vim.api.nvim_command('LunarMud')
--- vim.api.nvim_command('Habafax')
--- vim.api.nvim_command('KoiKai')
--- vim.api.nvim_command('BreakCore')
--- vim.api.nvim_command('PrincessPeach')
--- vim.api.nvim_command('Kanso')
--- vim.api.nvim_command('OneDark')
-
--- vim.cmd.colorscheme('onedark')
--- vim.cmd.colorscheme('catppuccin-latte')
--- vim.cmd.colorscheme('binary')
--- vim.cmd.colorscheme('tokyonight')
--- vim.cmd.colorscheme('monokai-pro-machine')
--- vim.cmd.colorscheme('monokai-pro-light')
--- vim.cmd.colorscheme('gruvbox-material')
--- vim.cmd.colorscheme('mosel')
--- vim.cmd.colorscheme('lackluster-dark')
--- vim.cmd.colorscheme('lackluster-mint')
--- vim.cmd.colorscheme('dayfox')
--- vim.cmd.colorscheme('nordfox')
--- vim.cmd.colorscheme('helix-dark')
--- vim.cmd.colorscheme('helix-light')
-
--- vim.api.nvim_command('Invis')

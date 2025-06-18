@@ -58,8 +58,6 @@ end, { desc = 'QOL: enable zen mode' })
 map('n', '<leader>tw', '<cmd>TWToggle<CR>', { desc = 'QOL: toggle typewriter mode' })
 -- map({ 'n', 'i' }, '<C-p>', '<cmd>Markview toggle<CR>', { desc = 'QOL: toggle markview rendering' })
 map('n', '<leader>t', '<cmd>VimtexTocToggle<CR>', { desc = 'QOL: toggle Vimtex table of contents' })
-map('n', '<leader>sw', '<cmd>set wrap<CR><cmd>echo "enabled word wrap"<CR>', { desc = 'QOL: enable word wrap' })
-map('n', '<leader>nw', '<cmd>set nowrap<CR><cmd>echo "disabled word wrap"<CR>', { desc = 'QOL: disable word wrap' })
 map({ 'n', 't' }, '<leader>vs', 'V:s/', { desc = "QOL: enter substitute mode for current line", remap = true })
 map({ 'n', 't' }, '<leader>fs', ':%s/', { desc = "QOL: enter global substitute mode", remap = true })
 
@@ -102,6 +100,55 @@ map('n', '<A-d>', '<cmd>bnext<CR>', { desc = 'NAV: move to next buffer' })
 map({ 'n', 't', 'i' }, '<A-x>', '<cmd>bdelete<CR>', { desc = 'NAV: close current buffer', remap = true })
 map({ 'n', 't' }, '<C-a>', '<cmd>tabp<CR>', { desc = "NAV: goto previous tab", remap = true })
 map({ 'n', 't' }, '<C-d>', '<cmd>tabn<CR>', { desc = "NAV: goto next tab", remap = true })
+
+----------------------
+-- Modyfing options --
+----------------------
+-- Keymaps imajo format `<leader><action><[o]ption>`
+--
+-- * Action : [e]nable, [d]isable, [t]oggle
+-- * Option : prva črka od opt, npr. [w]rap
+--------------------------
+-- vim.opt.conceallevel --
+--------------------------
+map('n', '<leader>tc', function()
+  if vim.opt.conceallevel._value ~= 0 then
+    vim.opt.conceallevel = 0
+    print("toggled concealing (level: 0)")
+  else
+    vim.opt.conceallevel = 3
+    print("toggled concealing (level: 3)")
+  end
+end, { desc = 'OPT: toggle concealing (0 / 3)' })
+
+map('n', '<leader>dc', function()
+  vim.opt.conceallevel = 0
+  print("disabled concealing (level: 0)")
+end, { desc = 'OPT: disable concealing (level: 0)' })
+
+map('n', '<leader>ec', function()
+  vim.opt.conceallevel = 3
+  print("enabled concealing (level: 3)")
+end, { desc = 'OPT: enable concealing (level: 3)' })
+
+------------------
+-- vim.opt.wrap --
+------------------
+map('n', '<leader>tw', function()
+  if vim.opt.wrap._value == true then
+    vim.opt.wrap = false
+    print("toggled (no) word wrapping")
+  else
+    vim.opt.wrap = true
+    print("toggled word wrapping")
+  end
+end, { desc = 'OPT: toggle word wrapping' })
+
+map('n', '<leader>ew', '<cmd>set wrap<CR><cmd>echo "enabled word wrap"<CR>',
+  { desc = 'OPT: enable word wrap' })
+
+map('n', '<leader>dw', '<cmd>set nowrap<CR><cmd>echo "disabled word wrap"<CR>',
+  { desc = 'OPT: disable word wrap' })
 
 ----------
 -- Misc --
