@@ -33,7 +33,7 @@ require('lazy').setup({
   require('pogacha.typewriter'),
   require('pogacha.colors'),
   require('pogacha.vimtex'),
-  require('pogacha.markview'),
+  -- require('pogacha.markview'),
   { "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   require('pogacha.ibl'),
   require('pogacha.typst'),
