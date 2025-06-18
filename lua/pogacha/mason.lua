@@ -10,7 +10,7 @@ return {
     require("mason-lspconfig").setup({
       auto_install = true,
       ensure_installed = {
-        "basedpyright", "lua_ls", "clangd", "marksman", "rust_analyzer", "jdtls"
+        "basedpyright", "lua_ls", "clangd", "marksman", "rust_analyzer", "bashls", "tinymist"
       }
     })
     local capabilities = require('blink.cmp').get_lsp_capabilities()
