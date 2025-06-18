@@ -17,12 +17,23 @@ map('n', '<leader><leader>', function() t.builtin.buffers(t.no_preview({})) end,
 map('n', '<leader>sf', function() t.builtin.find_files(t.no_preview({ prompt_title = vim.fn.getcwd() })) end,
   { desc = 'PSN: search files in current root directory' })
 
+map('n', '<leader>sc', function() t.builtin.command_history(t.no_preview({})) end,
+  { desc = 'PSN: search recent commands' })
+
+map('n', '<leader>sm', function() t.builtin.man_pages() end,
+  { desc = 'PSN: search man pages!' })
+
+-- TOOD: spremeni svoje themes v `theming.lua` iz user commands, da jih bo zaznal
+map('n', '<leader>cs', function() t.builtin.colorscheme({ enable_preview = true }) end,
+  { desc = 'PSN: change colorscheme' })
+
 map({ 'n', 't' }, '<leader>vs', 'V:s/', { desc = "PSN: enter substitute mode for current line", remap = true })
 map({ 'n', 't' }, '<leader>fs', ':%s/', { desc = "PSN: enter global substitute mode", remap = true })
 
+map('t', '<esc><esc>', '<C-\\><C-N>',
+  { desc = "PSN: exit insert mode in terminal mode" })
 map({ 'n', 't' }, '|', '<cmd>tabnew<CR><cmd>terminal<CR>',
   { desc = "PSN: open new tab and enter terminal mode", remap = true })
-map('t', '<esc><esc>', '<C-\\><C-N>', { desc = "PSN: exit insert mode in terminal mode" })
 
 map({ 'v', 'n' }, 'ge', '$', { desc = 'PSN: go to last character of line. remap "$"', remap = true })
 map('x', '$', 'g_', { desc = 'PSN: Do not include white space characters when using $ in visual mode' })
