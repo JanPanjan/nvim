@@ -61,7 +61,7 @@ vim.o.concealcursor    = 'n'
 -- Determines how text with concealed syntax is shown
 vim.o.conceallevel     = 2 -- 0 to 3
 -- Sets colorcolumn
-vim.o.colorcolumn      = "98"
+vim.o.colorcolumn      = "111"
 -- Sets word wrap margin (characters from the right edge )
 vim.o.wrapmargin       = 0
 
@@ -103,5 +103,5 @@ vim.opt.autoread       = true
 
 -- Enable true colors if supported
 if (vim.fn.has('termguicolors')) then
-    vim.opt.termguicolors = true
+  vim.opt.termguicolors = true
 end
