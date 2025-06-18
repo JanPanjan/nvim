@@ -211,7 +211,7 @@ vim.api.nvim_create_user_command("QuietDark", function()
   vim.api.nvim_set_hl(0, "PmenuThumb", { bg = 'NvimDarkGray3' })
 end, {})
 
-vim.api.nvim_create_user_command("Mosshead", function()
+vim.api.nvim_create_user_command("Rosemarry", function()
   vim.o.background = "light"
   vim.cmd.colorscheme('quiet')
 
@@ -373,7 +373,7 @@ end, {})
 -- vim.api.nvim_command('DefaultDark')
 -- vim.api.nvim_command('DefaultLight')
 -- vim.api.nvim_command('QuietDark')
-vim.api.nvim_command('Mosshead')
+vim.api.nvim_command('Rosemarry')
 -- vim.api.nvim_command('ForestDweller')
 -- vim.api.nvim_command('SunDweller')
 -- vim.api.nvim_command('StarMud')
