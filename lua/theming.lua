@@ -196,7 +196,7 @@ vim.api.nvim_create_user_command("QuietDark", function()
   local gray2 = "#171717"
   local gray3 = "#101010"
   local text1 = "#aaaaaa"
-  local string = "#9a9f8f" -- a little yellowish
+  local main = "#9a9f8f" -- a little yellowish
   local text2 = "#888888"
   local text3 = "#666666"
 
@@ -205,27 +205,29 @@ vim.api.nvim_create_user_command("QuietDark", function()
   vim.api.nvim_set_hl(0, "ZenBg", { bg = "none" })
   vim.api.nvim_set_hl(0, "CursorLine", { bg = 'black' })
   vim.api.nvim_set_hl(0, "StatusLineNC", { bold = false, fg = text1, bg = 'gray1' })
-  vim.api.nvim_set_hl(0, "StatusLine", { bg = gray2, fg = text3 })
+  vim.api.nvim_set_hl(0, "StatusLine", { bg = gray2, fg = main })
+  vim.api.nvim_set_hl(0, "MsgArea", { bold = false, fg = main, bg = 'gray1' })
+  vim.api.nvim_set_hl(0, "ModeMsg", { bold = false })
   vim.api.nvim_set_hl(0, "TabLineFill", { bg = 'black', fg = 'white' })
   vim.api.nvim_set_hl(0, "TabLineSel", { bg = 'NvimDarkGray2', fg = 'NvimLightGray1' })
   -- vim.api.nvim_set_hl(0, "LineNr", { bg = 'black' })
   vim.api.nvim_set_hl(0, "LineNr", { bg = 'none' })
-  vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = string })
-  vim.api.nvim_set_hl(0, "Directory", { bg = "none", fg = string })
+  vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none", fg = main })
+  vim.api.nvim_set_hl(0, "Directory", { bg = "none", fg = main })
 
   vim.api.nvim_set_hl(0, "Comment", { fg = text3, bold = false })
   vim.api.nvim_set_hl(0, "Visual", { bg = gray1 })
   vim.api.nvim_set_hl(0, "Function", { fg = text2 })
-  vim.api.nvim_set_hl(0, "String", { fg = string })
+  vim.api.nvim_set_hl(0, "String", { fg = main })
   vim.api.nvim_set_hl(0, "Identifier", { fg = text1 })
   vim.api.nvim_set_hl(0, "Special", { fg = text1 })
   vim.api.nvim_set_hl(0, "Statement", { fg = text1 })
 
-  vim.api.nvim_set_hl(0, "Pmenu", { fg = string, bg = "none" })
+  vim.api.nvim_set_hl(0, "Pmenu", { fg = main, bg = "none" })
   vim.api.nvim_set_hl(0, "PmenuKind", { bg = "none" })
-  vim.api.nvim_set_hl(0, "PmenuSel", { fg = '#333333', bg = string })
+  vim.api.nvim_set_hl(0, "PmenuSel", { fg = '#333333', bg = main })
   vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "none" })
-  vim.api.nvim_set_hl(0, "PmenuThumb", { bg = string })
+  vim.api.nvim_set_hl(0, "PmenuThumb", { bg = main })
 end, {})
 
 vim.api.nvim_create_user_command("Rosemarry", function()
