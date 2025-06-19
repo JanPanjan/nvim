@@ -22,13 +22,13 @@ vim.opt.swapfile       = false
 
 -- Sets line and relative numbers
 vim.opt.number         = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Sets number line column width
-vim.o.numberwidth      = 5
+vim.o.numberwidth      = 6
 
 -- Enables signcolumn
-vim.opt.signcolumn     = 'yes'
+vim.opt.signcolumn     = 'no'
 
 -- Enables tabline
 vim.opt.showtabline    = 1
@@ -103,5 +103,5 @@ vim.opt.autoread       = true
 
 -- Enable true colors if supported
 if (vim.fn.has('termguicolors')) then
-  vim.opt.termguicolors = true
+    vim.opt.termguicolors = true
 end
