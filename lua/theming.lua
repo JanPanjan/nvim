@@ -393,3 +393,4 @@ vim.api.nvim_create_user_command("Invis", function()
 end, {})
 
 vim.api.nvim_command('QuietDark')
+vim.cmd.colorscheme('catppuccin-latte')
